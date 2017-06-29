@@ -9,31 +9,31 @@ class CreditCheck
   end
 
   def split_number
-    card_number.split("")
+    card_number.split('')
   end
 
   def double
     split_number.map.with_index do |number, index|
       if index.even?
-       (number.to_i * 2).to_s
-     else
-       number
-     end
+        (number.to_i * 2).to_s
+      else
+        number
+      end
     end
   end
 
   def reduce_doubled_numbers
-      double.map do |number|
-        if number.length > 1
-          reduce(number)
-        else
-          number
-        end
+    double.map do |number|
+      if number.length > 1
+        reduce(number)
+      else
+        number
       end
+    end
   end
 
   def reduce(number)
-    split_number = number.split("")
+    split_number = number.split('')
     split_string = split_number.map do |number|
       number.to_i
     end
@@ -49,7 +49,7 @@ class CreditCheck
   end
 
   def validate
-    if end_sum % 10 == 0
+    if (end_sum % 10).zero?
       true
     else
       false
@@ -64,6 +64,5 @@ class CreditCheck
     end
   end
 
-binding.pry
-
+# binding.pry
 end
