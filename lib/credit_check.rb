@@ -32,6 +32,14 @@ class CreditCheck
       end
   end
 
+  def reduce(number)
+    split_number = number.split("")
+    split_string = split_number.map do |number|
+      number.to_i
+    end
+    split_string.inject(:+).to_s
+  end
+
   def end_sum
     sum = []
     reduce_doubled_numbers.each do |number|
@@ -50,11 +58,13 @@ class CreditCheck
 
   def validation_message
     if validate == true
-      "Card Number #{card} is valid."
+      "#{card_number} is a valid card number."
     else
-      "Card Number #{card} is not valid."
+      "#{card_number} is not a valid card number."
     end
   end
-binding.pry
+
+  binding.pry
+
 
 end
