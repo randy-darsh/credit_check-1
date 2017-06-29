@@ -64,7 +64,6 @@ class CreditCheck
     end
   end
 
-  binding.pry
-
+binding.pry
 
 end
